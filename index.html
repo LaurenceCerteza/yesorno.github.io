@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Proposal</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: pink;
+            font-family: Arial, sans-serif;
+            flex-direction: column;
+            text-align: center;
+        }
+        h1 {
+            color: red;
+        }
+        .gif-container {
+            margin: 20px 0;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+        .yes {
+            background-color: red;
+            color: white;
+        }
+        .no {
+            background-color: white;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will you be my Valentine?</h1>
+    <div class="gif-container">
+        <img src="https://media1.tenor.com/images/41a988ef3af98e1c0883d7597133a893/tenor.gif?itemid=13476856" alt="Cute Valentine GIF">
+    </div>
+    <div class="buttons">
+        <button class="yes" id="yes">Yes</button>
+        <button class="no" id="no">No</button>
+    </div>
+    
+    <script>
+        let yesButton = document.getElementById("yes");
+        let noButton = document.getElementById("no");
+        let size = 20;
+        let messages = [
+            "Are you sure?",
+            "Pookie PLSPLSPLSPS",
+            "DON'T DO THIS TO ME PLSPLSPLSPS",
+            "YOU'RE BREAKING MY HEART",
+            "I'M GONNA CRY",
+            "PLZPLZPLZPLZPPLZPLZPZLZZZZZ",
+            "huhu",
+            "Pretty Please?",
+            "Ayaw mo, tapon ko 'to",
+            "Sure ka na?",
+            "Di wag, hmp",
+        ];
+        let index = 0;
 
+        noButton.addEventListener("click", function() {
+            size += 10;
+            yesButton.style.fontSize = size + "px";
+            if (index < messages.length) {
+                noButton.innerText = messages[index];
+                index++;
+            }
+        });
+        yesButton.addEventListener("click", function() {
+            window.location.href = "check.html";
+        });
+    </script>
+</body>
+</html>
