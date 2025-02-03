@@ -40,18 +40,35 @@
             background-color: white;
             color: red;
         }
+
+        /* Hidden content */
+        .celebration-content {
+            display: none;
+            flex-direction: column;
+        }
     </style>
 </head>
 <body>
-    <h1>Will you be my Valentine?</h1>
-    <div class="gif-container">
-        <img src="https://media1.tenor.com/images/41a988ef3af98e1c0883d7597133a893/tenor.gif?itemid=13476856" alt="Cute Valentine GIF">
+    <!-- Initial Proposal Page -->
+    <div id="proposal-content">
+        <h1>Will you be my Valentine?</h1>
+        <div class="gif-container">
+            <img src="https://media1.tenor.com/images/41a988ef3af98e1c0883d7597133a893/tenor.gif?itemid=13476856" alt="Cute Valentine GIF">
+        </div>
+        <div class="buttons">
+            <button class="yes" id="yes">Yes</button>
+            <button class="no" id="no">No</button>
+        </div>
     </div>
-    <div class="buttons">
-        <button class="yes" id="yes">Yes</button>
-        <button class="no" id="no">No</button>
+
+    <!-- Celebration Content -->
+    <div class="celebration-content" id="celebration-content">
+        <h1>Yay!</h1>
+        <div class="gif-container">
+            <img src="https://www.bing.com/th/id/OGC.153c59185cc57bf81b69c4a0e692eaae?pid=1.7&rurl=https%3a%2f%2fmedia.tenor.com%2fjjM8wEXXNqwAAAAd%2fkiss.gif&ehk=GOhOx%2fjycXojGlU43M72Xt%2fiu%2bcVjXiOC2zKYR%2bp0t4%3d" alt="Love Celebration GIF">
+        </div>
     </div>
-    
+
     <script>
         let yesButton = document.getElementById("yes");
         let noButton = document.getElementById("no");
@@ -79,8 +96,11 @@
                 index++;
             }
         });
+
         yesButton.addEventListener("click", function() {
-            window.location.href = "index.html";
+            // Hide the proposal content and show the celebration content
+            document.getElementById("proposal-content").style.display = "none";
+            document.getElementById("celebration-content").style.display = "flex";
         });
     </script>
 </body>
